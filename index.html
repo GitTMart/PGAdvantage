@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PGA Picker Dashboard</title>
+    <link rel="stylesheet" href="pga.css" />
+  </head>
+  <body>
+    <header class="pga-hero">
+      <div class="hero-copy">
+        <a class="back-link" href="index.html">Studio Tracker</a>
+        <span class="eyebrow">PGA Picker</span>
+        <h1 id="tournamentName">Charles Schwab Challenge</h1>
+        <p id="tournamentDescription">Rank the field by recent heat, Colonial Country Club course fit, similar-course profile, and current VegasInsider odds.</p>
+      </div>
+      <aside class="event-card">
+        <span id="tournamentStatus">Next tournament</span>
+        <strong id="tournamentCourse">Colonial Country Club</strong>
+        <small id="tournamentDate">May 28-31, 2026 - Fort Worth, TX</small>
+        <small id="tournamentPurse">Total purse: $9.9 million</small>
+      </aside>
+    </header>
+
+    <main class="layout">
+      <section class="controls" aria-label="Picker controls">
+        <div class="section-title">
+          <span class="eyebrow">Model</span>
+          <h2>Ranking Controls</h2>
+        </div>
+
+        <label>
+          Search
+          <input id="searchInput" type="search" placeholder="Player, tier, note, result" />
+        </label>
+
+        <label>
+          Tier
+          <select id="tierFilter">
+            <option value="all">All tiers</option>
+            <option value="A">Tier A</option>
+            <option value="B">Tier B</option>
+            <option value="C">Tier C</option>
+            <option value="Sleeper">Sleeper</option>
+          </select>
+        </label>
+
+        <label>
+          Sort
+          <select id="sortSelect">
+            <option value="overall">Overall model</option>
+            <option value="hot">Who's hot</option>
+            <option value="course">Course fit</option>
+            <option value="odds">Best odds</option>
+          </select>
+        </label>
+
+        <div class="weight-stack">
+          <label>Recent heat <input id="hotWeight" type="range" min="0" max="50" value="32" /></label>
+          <label><span id="courseWeightLabel">Colonial Country Club fit</span><input id="courseWeight" type="range" min="0" max="50" value="28" /></label>
+          <label>Similar courses <input id="similarWeight" type="range" min="0" max="50" value="22" /></label>
+          <label>Odds value <input id="oddsWeight" type="range" min="0" max="50" value="18" /></label>
+        </div>
+
+        <div class="button-row">
+          <button id="autoPickBtn" type="button">Auto Pick 6</button>
+          <button id="clearBtn" class="secondary" type="button">Clear</button>
+        </div>
+
+        <section class="dark-horse" aria-label="Dark horse recommendation">
+          <div class="section-title">
+            <span class="eyebrow">Longshot</span>
+            <h2>Dark Horse</h2>
+          </div>
+          <div id="darkHorsePick"></div>
+        </section>
+
+        <section class="salary-builder" aria-label="Salary cap team builder">
+          <div class="section-title">
+            <span class="eyebrow">Lineup</span>
+            <h2>Salary Cap</h2>
+          </div>
+          <label id="salaryDropZone" class="salary-drop" for="salaryFile">
+            <input id="salaryFile" type="file" accept=".xlsx,.xls,.csv" />
+            <strong>Drop Excel file</strong>
+            <span>Build best 6 under $50,000</span>
+          </label>
+          <div id="salaryResult" class="salary-result"></div>
+        </section>
+      </section>
+
+      <section class="summary-grid" aria-label="Summary">
+        <article><span>Top Overall</span><strong id="topOverall">--</strong></article>
+        <article><span>Hottest</span><strong id="topHot">--</strong></article>
+        <article><span>Best Course Fit</span><strong id="topCourse">--</strong></article>
+        <article><span>Odds Updated</span><strong id="oddsUpdated">--</strong></article>
+      </section>
+
+      <section class="top-ten" aria-label="Projected top ten">
+        <div class="section-title row">
+          <div>
+            <span class="eyebrow">Projection</span>
+            <h2>Projected Top 10</h2>
+          </div>
+          <div class="top-ten-actions">
+            <span id="topTenPill" class="pill">Colonial fit</span>
+            <button id="toggleTopTenBtn" class="secondary compact-button" type="button">Collapse</button>
+            <button id="recordTopTenBtn" class="secondary compact-button" type="button">Record Week</button>
+          </div>
+        </div>
+        <div id="topTenBody" class="top-ten-body">
+          <div id="topTenList" class="top-ten-list"></div>
+          <div class="top-ten-history">
+          <div class="section-title">
+            <span class="eyebrow">History</span>
+            <h2>Weekly Records</h2>
+          </div>
+          <div id="topTenHistory"></div>
+          </div>
+        </div>
+      </section>
+
+      <aside class="right-rail" aria-label="Picks and betting lines">
+        <section class="lineup" aria-label="Selected picks">
+          <div class="section-title row">
+            <div>
+              <span class="eyebrow">Card</span>
+              <h2>My Picks</h2>
+            </div>
+            <span id="pickCount" class="pill">0 / 6</span>
+          </div>
+          <div id="lineupList" class="lineup-list"></div>
+        </section>
+
+        <section class="vegas-lines" aria-label="VegasInsider lines">
+          <div class="section-title row">
+            <div>
+              <span class="eyebrow">Market</span>
+              <h2>VegasInsider Lines</h2>
+              <small id="vegasTournament" class="market-event">--</small>
+            </div>
+            <a class="source-link" href="https://www.vegasinsider.com/golf/odds/futures/" target="_blank" rel="noreferrer">Source</a>
+          </div>
+          <div class="line-head">
+            <span>Player</span>
+            <span>Best</span>
+            <span>Consensus</span>
+          </div>
+          <div id="vegasLines" class="vegas-line-list"></div>
+        </section>
+      </aside>
+
+      <section class="board" aria-label="Player rankings">
+        <div class="section-title row">
+          <div>
+            <span class="eyebrow">Board</span>
+            <h2>Player Comparison</h2>
+          </div>
+          <span class="pill">Model board</span>
+        </div>
+        <p id="courseNote" class="note">Course comp logic favors Colonial Country Club's precision profile: controlled driving, accurate approaches, patience on firm greens, and enough Texas wind to reward steady ball striking.</p>
+        <div id="playerGrid" class="player-grid"></div>
+      </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+    <script src="pga.js"></script>
+  </body>
+</html>
