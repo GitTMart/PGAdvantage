@@ -370,7 +370,7 @@ button.secondary,
 
 .metric-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 8px;
 }
 
@@ -577,6 +577,17 @@ button.secondary,
   align-items: center;
   justify-content: space-between;
   margin: 10px 0 6px;
+}
+
+.result-message {
+  margin: 8px 0;
+  border: 1px solid #cfe4d4;
+  border-radius: 6px;
+  background: rgba(223, 243, 231, 0.58);
+  color: var(--green-dark);
+  padding: 8px 10px;
+  font-size: 12px;
+  font-weight: 800;
 }
 
 .top-ten-record-row {

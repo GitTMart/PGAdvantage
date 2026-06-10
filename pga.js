@@ -28,6 +28,26 @@ const completedTournamentResults = {
     "keith mitchell": "CUT",
     "rickie fowler": "CUT",
     "sungjae im": "CUT"
+  },
+  "the memorial tournament presented by workday": {
+    "j t poston": "1",
+    "jt poston": "1",
+    "ryan gerard": "2",
+    "sam burns": "T3",
+    "tommy fleetwood": "T3",
+    "wyndham clark": "T3",
+    "eric cole": "T6",
+    "scottie scheffler": "T12",
+    "rory mcilroy": "T12",
+    "xander schauffele": "T12",
+    "ludvig aberg": "T20",
+    "si woo kim": "T20",
+    "justin rose": "T20",
+    "cameron young": "T35",
+    "matt fitzpatrick": "T38",
+    "justin thomas": "T38",
+    "patrick cantlay": "T42",
+    "russell henley": "T42"
   }
 };
 
@@ -66,6 +86,17 @@ const tournaments = [
     note: "Course comp logic favors Muirfield Village's demanding tee-to-green test: precise long irons, disciplined driving, fast greens, and patient scoring on a major-style setup."
   },
   {
+    name: "RBC Canadian Open",
+    start: "2026-06-11",
+    end: "2026-06-14",
+    course: "TPC Toronto at Osprey Valley - North Course",
+    location: "Caledon, Ontario, Canada",
+    purse: "$9.8 million",
+    courseFit: "TPC Toronto fit",
+    description: "Rank the field by recent heat, TPC Toronto course fit, similar-course profile, and current VegasInsider odds.",
+    note: "Course comp logic favors TPC Toronto's North Course: exposed Canadian parkland routing, strong driving, confident long approaches, and enough scoring chances to reward players who can stack birdies without losing control."
+  },
+  {
     name: "U.S. Open",
     start: "2026-06-18",
     end: "2026-06-21",
@@ -90,9 +121,9 @@ const tournaments = [
 ];
 
 const oddsSource = {
-  tournament: "the Memorial Tournament presented by Workday",
-  updatedLabel: "Jun 1, 2026",
-  books: ["Bet365", "BetMGM", "DraftKings", "Caesars", "FanDuel", "Fanatics", "Kalshi"],
+  tournament: "RBC Canadian Open",
+  updatedLabel: "Jun 9, 2026",
+  books: ["Bet365", "BetMGM", "DraftKings", "Caesars", "FanDuel", "RiversCasino"],
   url: "https://www.vegasinsider.com/golf/odds/futures/"
 };
 
@@ -365,7 +396,7 @@ const staleCharlesSchwabPlayers = [
   }
 ];
 
-const players = [
+const staleMemorialPlayers = [
   {
     id: "scottie-scheffler",
     name: "Scottie Scheffler",
@@ -564,10 +595,314 @@ const players = [
   }
 ];
 
+const players = [
+  {
+    id: "tommy-fleetwood",
+    name: "Tommy Fleetwood",
+    country: "ENG",
+    tier: "A",
+    risk: "Safe",
+    odds: { Bet365: 1100, BetMGM: 1200, DraftKings: 1150, Caesars: 1100, FanDuel: 1200, RiversCasino: 1100 },
+    resultsVerified: true,
+    last5: [["the Memorial Tournament presented by Workday", "T3"], ["PGA Championship", "CUT"], ["Truist Championship", "T5"], ["Cadillac Championship", "T23"], ["RBC Heritage", "T52"]],
+    hot: 88,
+    course: 91,
+    similar: 90,
+    putting: 86,
+    note: "VegasInsider RBC favorite. Strong current form, elite ball-striking, and a course setup that rewards controlled aggression."
+  },
+  {
+    id: "matt-fitzpatrick",
+    name: "Matt Fitzpatrick",
+    country: "ENG",
+    tier: "A",
+    risk: "Safe",
+    odds: { Bet365: 1400, BetMGM: 1400, DraftKings: 1200, Caesars: 1300, FanDuel: 1300, RiversCasino: 1400 },
+    resultsVerified: true,
+    last5: [["PGA Championship", "T7"], ["Truist Championship", "T24"], ["Cadillac Championship", "T7"], ["RBC Heritage", "T8"], ["Masters Tournament", "T18"]],
+    hot: 87,
+    course: 92,
+    similar: 91,
+    putting: 88,
+    note: "Excellent accuracy and approach profile for TPC Toronto, with a clean run of recent high finishes."
+  },
+  {
+    id: "sam-burns",
+    name: "Sam Burns",
+    country: "USA",
+    tier: "A",
+    risk: "Medium",
+    odds: { Bet365: 1400, BetMGM: 1400, DraftKings: 1275, Caesars: 1300, FanDuel: 1500, RiversCasino: 1400 },
+    resultsVerified: true,
+    last5: [["the Memorial Tournament presented by Workday", "T3"], ["PGA Championship", "T18"], ["Truist Championship", "T28"], ["Masters Tournament", "T7"], ["THE PLAYERS Championship", "T13"]],
+    hot: 86,
+    course: 88,
+    similar: 88,
+    putting: 90,
+    note: "Comes in off a Memorial contention week and has the scoring profile to attack a Canadian Open setup."
+  },
+  {
+    id: "collin-morikawa",
+    name: "Collin Morikawa",
+    country: "USA",
+    tier: "A",
+    risk: "Medium",
+    odds: { Bet365: 2200, BetMGM: 2500, DraftKings: 2350, Caesars: 2000, FanDuel: 2200, RiversCasino: 2200 },
+    resultsVerified: true,
+    last5: [["PGA Championship", "T26"], ["Truist Championship", "T33"], ["RBC Heritage", "T12"], ["Masters Tournament", "T7"], ["THE PLAYERS Championship", "T22"]],
+    hot: 81,
+    course: 91,
+    similar: 90,
+    putting: 76,
+    note: "Approach-play ceiling keeps him high on the model even when recent putting is uneven."
+  },
+  {
+    id: "wyndham-clark",
+    name: "Wyndham Clark",
+    country: "USA",
+    tier: "A",
+    risk: "Medium",
+    odds: { Bet365: 1800, BetMGM: 2000, DraftKings: 2350, Caesars: 1800, FanDuel: 2200, RiversCasino: 2000 },
+    resultsVerified: true,
+    last5: [["the Memorial Tournament presented by Workday", "T3"], ["PGA Championship", "CUT"], ["THE CJ CUP Byron Nelson", "1"], ["Masters Tournament", "T21"], ["THE PLAYERS Championship", "T35"]],
+    hot: 86,
+    course: 87,
+    similar: 88,
+    putting: 87,
+    note: "Recent win plus Memorial contention gives him one of the better form curves in the field."
+  },
+  {
+    id: "robert-macintyre",
+    name: "Robert Macintyre",
+    country: "SCO",
+    tier: "B",
+    risk: "Medium",
+    odds: { Bet365: 2800, BetMGM: 3000, DraftKings: 2450, Caesars: 2500, FanDuel: 2700, RiversCasino: 2800 },
+    resultsVerified: true,
+    last5: [["Charles Schwab Challenge", "T42"], ["PGA Championship", "CUT"], ["Truist Championship", "T60"], ["RBC Heritage", "T42"], ["Masters Tournament", "CUT"]],
+    hot: 72,
+    course: 83,
+    similar: 85,
+    putting: 79,
+    note: "Canadian Open history and a fair VegasInsider price keep him in the highlighted 20."
+  },
+  {
+    id: "kristoffer-reitan",
+    name: "Kristoffer Reitan",
+    country: "NOR",
+    tier: "B",
+    risk: "Medium",
+    odds: { Bet365: 2500, BetMGM: 2800, DraftKings: 2500, Caesars: 2200, FanDuel: 2500, RiversCasino: 2500 },
+    resultsVerified: true,
+    last5: [["PGA Championship", "T22"], ["Truist Championship", "1"], ["Masters Tournament", "T41"], ["Valero Texas Open", "T21"], ["Texas Children's Houston Open", "T35"]],
+    hot: 85,
+    course: 84,
+    similar: 84,
+    putting: 86,
+    note: "Recent Signature Event winner with enough tee-to-green stability to grade well at this number."
+  },
+  {
+    id: "justin-rose",
+    name: "Justin Rose",
+    country: "ENG",
+    tier: "B",
+    risk: "Medium",
+    odds: { Bet365: 2500, BetMGM: 2800, DraftKings: 2600, Caesars: 2400, FanDuel: 3000, RiversCasino: 2800 },
+    resultsVerified: true,
+    last5: [["the Memorial Tournament presented by Workday", "T20"], ["PGA Championship", "T35"], ["Truist Championship", "T19"], ["Masters Tournament", "T3"], ["THE PLAYERS Championship", "T26"]],
+    hot: 79,
+    course: 87,
+    similar: 88,
+    putting: 84,
+    note: "Veteran profile with enough approach discipline and Canadian Open comfort to remain live."
+  },
+  {
+    id: "brooks-koepka",
+    name: "Brooks Koepka",
+    country: "USA",
+    tier: "B",
+    risk: "Medium",
+    odds: { Bet365: 3300, BetMGM: 3000, DraftKings: 2700, Caesars: 2400, FanDuel: 3000, RiversCasino: 3000 },
+    resultsVerified: true,
+    last5: [["PGA Championship", "T14"], ["Masters Tournament", "T30"], ["THE PLAYERS Championship", "T13"], ["Genesis Invitational", "T18"], ["AT&T Pebble Beach Pro-Am", "T24"]],
+    hot: 78,
+    course: 86,
+    similar: 87,
+    putting: 80,
+    note: "Power and major-grade ball-striking make him a useful high-upside mid-board play."
+  },
+  {
+    id: "nicolai-hojgaard",
+    name: "Nicolai Hojgaard",
+    country: "DEN",
+    tier: "B",
+    risk: "Medium",
+    odds: { Bet365: 3000, BetMGM: 3500, DraftKings: 2900, Caesars: 3000, FanDuel: 3300, RiversCasino: 2800 },
+    resultsVerified: true,
+    last5: [["PGA Championship", "T18"], ["Truist Championship", "T37"], ["Masters Tournament", "CUT"], ["Texas Children's Houston Open", "T9"], ["Valspar Championship", "T16"]],
+    hot: 78,
+    course: 84,
+    similar: 86,
+    putting: 81,
+    note: "Volatile scoring upside and strong driver profile fit the Canadian Open shootout path."
+  },
+  {
+    id: "viktor-hovland",
+    name: "Viktor Hovland",
+    country: "NOR",
+    tier: "B",
+    risk: "Medium",
+    odds: { Bet365: 3500, BetMGM: 3500, DraftKings: 3100, Caesars: 3500, FanDuel: 3500, RiversCasino: 3300 },
+    resultsVerified: true,
+    last5: [["PGA Championship", "T22"], ["Truist Championship", "T14"], ["Masters Tournament", "T18"], ["THE PLAYERS Championship", "T13"], ["Arnold Palmer Invitational presented by Mastercard", "T20"]],
+    hot: 79,
+    course: 86,
+    similar: 87,
+    putting: 78,
+    note: "Ball-striking and birdie ceiling keep him above longer-priced peers."
+  },
+  {
+    id: "shane-lowry",
+    name: "Shane Lowry",
+    country: "IRL",
+    tier: "B",
+    risk: "Medium",
+    odds: { Bet365: 3500, BetMGM: 3500, DraftKings: 3400, Caesars: 4000, FanDuel: 4000, RiversCasino: 3300 },
+    resultsVerified: true,
+    last5: [["PGA Championship", "T26"], ["Truist Championship", "T5"], ["RBC Heritage", "T25"], ["Masters Tournament", "T30"], ["THE PLAYERS Championship", "T22"]],
+    hot: 81,
+    course: 86,
+    similar: 86,
+    putting: 82,
+    note: "Trending back into form, with enough wind/control skill for a Canadian Open test."
+  },
+  {
+    id: "alex-noren",
+    name: "Alex Noren",
+    country: "SWE",
+    tier: "C",
+    risk: "Medium",
+    odds: { Bet365: 3300, BetMGM: 3500, DraftKings: 3700, Caesars: 3500, FanDuel: 3500, RiversCasino: 4000 },
+    resultsVerified: true,
+    last5: [["PGA Championship", "T30"], ["Truist Championship", "T28"], ["RBC Heritage", "T12"], ["Masters Tournament", "T30"], ["Valspar Championship", "T11"]],
+    hot: 78,
+    course: 85,
+    similar: 86,
+    putting: 83,
+    note: "Steady control profile with one of the better longer best lines on the board."
+  },
+  {
+    id: "jacob-bridgeman",
+    name: "Jacob Bridgeman",
+    country: "USA",
+    tier: "C",
+    risk: "Medium",
+    odds: { Bet365: 3500, BetMGM: 3500, DraftKings: 3800, Caesars: 4000, FanDuel: 4000, RiversCasino: 3300 },
+    resultsVerified: true,
+    last5: [["PGA Championship", "T30"], ["Truist Championship", "T37"], ["Masters Tournament", "T41"], ["THE PLAYERS Championship", "T5"], ["Genesis Invitational", "1"]],
+    hot: 79,
+    course: 84,
+    similar: 84,
+    putting: 85,
+    note: "Win equity already shown this season and a playable price across books."
+  },
+  {
+    id: "alex-fitzpatrick",
+    name: "Alex Fitzpatrick",
+    country: "ENG",
+    tier: "C",
+    risk: "Medium",
+    odds: { Bet365: 3500, BetMGM: 3500, DraftKings: 3900, Caesars: 4000, FanDuel: 3500, RiversCasino: 3300 },
+    resultsVerified: true,
+    last5: [["PGA Championship", "T18"], ["Truist Championship", "T8"], ["Zurich Classic of New Orleans", "1"], ["Hero Indian Open", "1"], ["Valspar Championship", "T10"]],
+    hot: 87,
+    course: 83,
+    similar: 85,
+    putting: 91,
+    note: "One of the form spikes in the field, with recent wins and enough value to qualify as a live dark horse."
+  },
+  {
+    id: "michael-thorbjornsen",
+    name: "Michael Thorbjornsen",
+    country: "USA",
+    tier: "C",
+    risk: "Medium",
+    odds: { Bet365: 4500, BetMGM: 4000, DraftKings: 4000, Caesars: 3000, FanDuel: 4000, RiversCasino: 4000 },
+    resultsVerified: true,
+    last5: [["PGA Championship", "CUT"], ["Cadillac Championship", "T53"], ["Zurich Classic of New Orleans", "T13"], ["RBC Heritage", "T33"], ["Valero Texas Open", "CUT"]],
+    hot: 73,
+    course: 82,
+    similar: 82,
+    putting: 77,
+    note: "Ceiling play with meaningful price variation, best used when the sliders favor upside."
+  },
+  {
+    id: "aaron-rai",
+    name: "Aaron Rai",
+    country: "ENG",
+    tier: "C",
+    risk: "Medium",
+    odds: { Bet365: 3300, BetMGM: 3500, DraftKings: 4100, Caesars: 2800, FanDuel: 3300, RiversCasino: 3300 },
+    resultsVerified: true,
+    last5: [["PGA Championship", "1"], ["Truist Championship", "T17"], ["RBC Heritage", "T16"], ["Masters Tournament", "48"], ["THE PLAYERS Championship", "T35"]],
+    hot: 89,
+    course: 84,
+    similar: 85,
+    putting: 90,
+    note: "PGA Championship winner with three straight top-20 level results in the form stack."
+  },
+  {
+    id: "harry-hall",
+    name: "Harry Hall",
+    country: "ENG",
+    tier: "Sleeper",
+    risk: "Medium",
+    odds: { Bet365: 5000, BetMGM: 4500, DraftKings: 4300, Caesars: 5000, FanDuel: 4000, RiversCasino: 5000 },
+    resultsVerified: true,
+    last5: [["PGA Championship", "CUT"], ["Truist Championship", "T8"], ["Cadillac Championship", "T30"], ["RBC Heritage", "T65"], ["Masters Tournament", "CUT"]],
+    hot: 77,
+    course: 82,
+    similar: 81,
+    putting: 84,
+    note: "Longer outright number, but recent T8 keeps him in the top-20 highlighted pool."
+  },
+  {
+    id: "eric-cole",
+    name: "Eric Cole",
+    country: "USA",
+    tier: "Sleeper",
+    risk: "Medium",
+    odds: { Bet365: 3500, BetMGM: 4500, DraftKings: 4500, Caesars: 3300, FanDuel: 4000, RiversCasino: 4000 },
+    resultsVerified: true,
+    last5: [["the Memorial Tournament presented by Workday", "T6"], ["Charles Schwab Challenge", "2"], ["PGA Championship", "T35"], ["Truist Championship", "T45"], ["RBC Heritage", "T52"]],
+    hot: 86,
+    course: 82,
+    similar: 83,
+    putting: 88,
+    note: "Recent runner-up plus another high finish makes him one of the more useful sleeper values."
+  },
+  {
+    id: "keith-mitchell",
+    name: "Keith Mitchell",
+    country: "USA",
+    tier: "Sleeper",
+    risk: "Medium",
+    odds: { Bet365: 5500, BetMGM: 4000, DraftKings: 4500, Caesars: 5000, FanDuel: 5000, RiversCasino: 4500 },
+    resultsVerified: true,
+    last5: [["PGA Championship", "T65"], ["Cadillac Championship", "T55"], ["Zurich Classic of New Orleans", "CUT"], ["Valero Texas Open", "CUT"], ["Texas Children's Houston Open", "T14"]],
+    hot: 72,
+    course: 83,
+    similar: 82,
+    putting: 74,
+    note: "Driver-heavy upside play at a longer number; useful when the model sliders lean course fit."
+  }
+];
+
 const state = {
   selected: JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]"),
   topTenHistory: JSON.parse(localStorage.getItem(TOP_TEN_HISTORY_KEY) || "[]"),
   editingResultRecordId: "",
+  resultMessages: {},
   tier: "all",
   sort: "overall",
   search: "",
@@ -575,6 +910,7 @@ const state = {
     hot: 32,
     course: 28,
     similar: 22,
+    putting: 20,
     odds: 18
   }
 };
@@ -586,6 +922,7 @@ const el = {
   hotWeight: document.querySelector("#hotWeight"),
   courseWeight: document.querySelector("#courseWeight"),
   similarWeight: document.querySelector("#similarWeight"),
+  puttingWeight: document.querySelector("#puttingWeight"),
   oddsWeight: document.querySelector("#oddsWeight"),
   tournamentName: document.querySelector("#tournamentName"),
   tournamentDescription: document.querySelector("#tournamentDescription"),
@@ -632,12 +969,17 @@ function oddsValue(player) {
   return Math.min(99, Math.max(35, Math.log10(consensusOdds(player)) * strength * 0.3));
 }
 
+function puttingScore(player) {
+  return player.putting ?? Math.round(player.hot * 0.42 + player.similar * 0.24 + oddsValue(player) * 0.18 + player.course * 0.16);
+}
+
 function score(player) {
   const total = Object.values(state.weights).reduce((sum, value) => sum + value, 0) || 1;
   return (
     player.hot * state.weights.hot +
     player.course * state.weights.course +
     player.similar * state.weights.similar +
+    puttingScore(player) * state.weights.putting +
     oddsValue(player) * state.weights.odds
   ) / total;
 }
@@ -735,6 +1077,7 @@ function rankedPlayers() {
   return filteredPlayers().sort((a, b) => {
     if (state.sort === "hot") return b.hot - a.hot;
     if (state.sort === "course") return (b.course + b.similar) - (a.course + a.similar);
+    if (state.sort === "putting") return puttingScore(b) - puttingScore(a);
     if (state.sort === "odds") return bestOdds(a) - bestOdds(b);
     return score(b) - score(a);
   });
@@ -742,20 +1085,26 @@ function rankedPlayers() {
 
 function vegasLinePlayers() {
   const vegasOrder = new Map([
-    "scottie-scheffler",
-    "rory-mcilroy",
-    "cameron-young",
-    "ludvig-aberg",
-    "xander-schauffele",
-    "matt-fitzpatrick",
-    "russell-henley",
-    "si-woo-kim",
-    "patrick-cantlay",
     "tommy-fleetwood",
+    "matt-fitzpatrick",
+    "sam-burns",
+    "collin-morikawa",
+    "wyndham-clark",
     "robert-macintyre",
-    "ben-griffin",
-    "min-woo-lee",
-    "justin-thomas"
+    "kristoffer-reitan",
+    "justin-rose",
+    "brooks-koepka",
+    "nicolai-hojgaard",
+    "viktor-hovland",
+    "shane-lowry",
+    "alex-noren",
+    "jacob-bridgeman",
+    "alex-fitzpatrick",
+    "michael-thorbjornsen",
+    "aaron-rai",
+    "harry-hall",
+    "eric-cole",
+    "keith-mitchell"
   ].map((id, index) => [id, index]));
 
   return filteredPlayers().sort((a, b) =>
@@ -831,7 +1180,7 @@ function renderSummary() {
 
 function projectionScore(player) {
   const marketExpectation = Math.max(45, 100 - Math.log10(consensusOdds(player)) * 16);
-  const trend = player.hot * 0.38 + player.similar * 0.2;
+  const trend = player.hot * 0.32 + player.similar * 0.18 + puttingScore(player) * 0.14;
   const courseSkill = player.course * 0.32;
   const modelLean = score(player) * 0.1;
   return trend + courseSkill + marketExpectation * 0.18 + modelLean;
@@ -839,6 +1188,7 @@ function projectionScore(player) {
 
 function topTenReason(player) {
   const bestLine = moneyline(bestOdds(player));
+  if (puttingScore(player) >= 88) return `${puttingScore(player)} putting form, ${player.hot} heat, and ${bestLine} best line.`;
   if (player.course >= 88) return `${player.course} course fit, ${player.hot} heat, and ${bestLine} best line.`;
   if (player.hot >= 82) return `${player.hot} heat with enough ${activeTournament().course} control to trend into contention.`;
   if (bestOdds(player) >= 4000) return `Longer market number, but the skill mix grades as a top-10 path.`;
@@ -906,10 +1256,18 @@ function applyKnownTournamentResults(recordId) {
   if (!record) return;
 
   const lookup = resultLookupFor(record);
+  let matchedCount = 0;
   record.picks = record.picks.map((pick) => ({
     ...pick,
     actualFinish: lookup[normalizeName(pick.name)] || pick.actualFinish || ""
-  }));
+  })).map((pick) => {
+    if (lookup[normalizeName(pick.name)]) matchedCount += 1;
+    return pick;
+  });
+
+  state.resultMessages[recordId] = matchedCount
+    ? `Applied ${matchedCount} verified result${matchedCount === 1 ? "" : "s"} for ${record.tournament}.`
+    : `No verified results are loaded yet for ${record.tournament}.`;
   saveTopTenHistory();
   renderTopTenHistory();
 }
@@ -960,6 +1318,9 @@ function renderTopTenHistory() {
         </div>
       </div>
     ` : "";
+    const resultMessage = state.resultMessages[record.id]
+      ? `<div class="result-message">${state.resultMessages[record.id]}</div>`
+      : "";
 
     return `
     <details class="top-ten-record" open>
@@ -971,6 +1332,7 @@ function renderTopTenHistory() {
         <span>Recorded ${record.recordedAt}</span>
         ${resultButton}
       </div>
+      ${resultMessage}
       ${record.picks.map((pick) => `
         <div class="top-ten-record-row">
           <strong class="record-result">${pick.actualFinish || "--"}</strong>
@@ -1013,6 +1375,7 @@ function renderGrid() {
           <div class="metric"><span class="metric-label">Hot</span><strong>${player.hot}</strong></div>
           <div class="metric"><span class="metric-label">Course</span><strong>${player.course}</strong></div>
           <div class="metric"><span class="metric-label">Similar</span><strong>${player.similar}</strong></div>
+          <div class="metric"><span class="metric-label">Putting</span><strong>${puttingScore(player)}</strong></div>
           <div class="metric"><span class="metric-label">Best Odds</span><strong>${moneyline(bestOdds(player))}</strong></div>
         </div>
         ${renderRecentForm(player)}
@@ -1115,6 +1478,7 @@ function salaryModelScore(candidate) {
     salarySignal * state.weights.hot +
     salarySignal * state.weights.course +
     salarySignal * state.weights.similar +
+    salarySignal * state.weights.putting +
     candidate.valueScore * state.weights.odds
   ) / total;
 }
@@ -1318,7 +1682,7 @@ function wireEvents() {
     const saveButton = event.target.closest("[data-save-results]");
     if (saveButton) saveWeeklyResults(saveButton.dataset.saveResults);
   });
-  ["hot", "course", "similar", "odds"].forEach((key) => {
+  ["hot", "course", "similar", "putting", "odds"].forEach((key) => {
     el[`${key}Weight`].addEventListener("input", (event) => {
       state.weights[key] = Number(event.target.value);
       renderSummary();
